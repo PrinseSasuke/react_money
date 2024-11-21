@@ -9,6 +9,7 @@ import { AppContext } from "../../App";
 import { useContext } from "react";
 function TransactionModal({ isOpen, onClose }) {
   const { setTransactions } = useContext(AppContext);
+
   const customFormStyles = {
     content: {
       top: "50%",
@@ -17,6 +18,9 @@ function TransactionModal({ isOpen, onClose }) {
       bottom: "auto",
       transform: "translate(-50%, -50%)",
       padding: "60px 100px",
+    },
+    overlay: {
+      backgroundColor: "transperent",
     },
   };
   const formatDate = (date) => {
@@ -58,6 +62,7 @@ function TransactionModal({ isOpen, onClose }) {
         onRequestClose={onClose}
         contentLabel="Example Modal"
         style={customFormStyles}
+        closeTimeoutMS={200}
       >
         <div className={styles.topWrapper}>
           <span className={styles.title}>Добавить запись</span>

@@ -9,7 +9,9 @@ function Transactions() {
   const { transactions, setTransactions } = useOutletContext();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const openModal = () => setModalIsOpen(true);
-  const closeModal = () => setModalIsOpen(false);
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   React.useEffect(() => {
     axios

@@ -120,6 +120,22 @@ button {
   border-radius: 6px;
   background-color: $color--white;
   border: 1px solid #4e36fc; /* Цвет границы */
+
+  transition: all 0.1s ease;
+
+  &:hover {
+    transition: all 150ms linear;
+    opacity: 0.85;
+  }
+  &:active {
+    transition: all 150ms linear;
+    opacity: 0.75;
+  }
+
+  &:focus {
+    outline: none;
+    outline-offset: -4px;
+  }
 }
 .button {
   &__filter {
@@ -129,11 +145,31 @@ button {
     img {
       margin-right: $base * 2;
     }
+    &:hover {
+      color: #202129;
+      background-color: #e1e2e2;
+      opacity: 1;
+    }
+
+    &:active {
+      background-color: #d5d6d6;
+      opacity: 1;
+    }
   }
   &__add_transaction {
     font-weight: $fw-semi;
     font-size: $fs-3;
     padding: $base $base * 3;
+    &:hover {
+      color: #202129;
+      background-color: #e1e2e2;
+      opacity: 1;
+    }
+
+    &:active {
+      background-color: #d5d6d6;
+      opacity: 1;
+    }
   }
 }
 //===CONTAINER===
@@ -212,6 +248,12 @@ button {
   padding: 10px; /* Внутренний отступ */
   border-radius: 6px; /* Закругленные углы */
   width: $base * 98; /* Ширина инпута */
+  transition: box-shadow 0.3s ease; /* Добавляем анимацию теней */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Исходная тень */
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Увеличенная тень при фокусе */
+    color: $color--dark;
+  }
 }
 
 /* Стили для иконки */
@@ -235,3 +277,31 @@ button {
 }
 
 //=== /TRANSACTIONS === //
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: all 500ms ease-in-out;
+  background-color: transparent;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  background-color: transparent;
+}
+
+.ReactModal__Content {
+  transition: all 500ms ease-in-out;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ReactModal__Content--after-open {
+  transform: translateX(1000px);
+}
+.ReactModal__Content--before-close {
+  transform: translateX(-1000px);
+}
