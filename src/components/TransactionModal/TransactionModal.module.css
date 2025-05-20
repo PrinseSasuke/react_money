@@ -1,0 +1,120 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.label {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 12px;
+}
+.label__description {
+  margin-bottom: 12px;
+}
+
+.input,
+.select,
+.textarea,
+.custom_date_input {
+  font-family: "Inter", sans-serif;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease; /* Добавляем анимацию трансформации */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.input:hover,
+.select:hover,
+.textarea:hover,
+.custom_date_input:hover {
+  transform: scale(1.05); /* Увеличение */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #000000;
+}
+.input:active,
+.select:active,
+.textarea:active,
+.custom_date_input:active {
+  transform: scale(1.05); /* Увеличение */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Убираем тень */
+}
+
+.select:active {
+  transform: none; /* Лёгкое уменьшение */
+}
+.select:hover, .select:focus {
+  transform: scale(1.05); /* Увеличение */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-color: #fff;
+}
+
+.textarea {
+  resize: none;
+  height: 80px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.topWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.close {
+  cursor: pointer;
+  border: none;
+  width: 18px;
+  height: 16px;
+  box-shadow: none;
+}
+
+.ReactModal__Content {
+  padding: 60px 100px;
+}
+
+.button__submit {
+  font-family: "Inter", sans-serif;
+  padding: 12px 12px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fieldset {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+}
+
+.flexContainer {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.radioLabelIncome {
+  color: #007f00;
+  margin-right: 12px;
+}
+.radioLabelExpense {
+  color: #d30000;
+}/*# sourceMappingURL=TransactionModal.module.css.map */

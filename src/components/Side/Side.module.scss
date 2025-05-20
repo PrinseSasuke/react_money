@@ -46,6 +46,12 @@ $screen-xl: 960px;
   width: 25%;
   padding-left: $base * 8;
   height: 100%;
+  position: fixed;
+  top: $base * 14;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .topWrapper {
   display: flex;
@@ -69,4 +75,5 @@ $screen-xl: 960px;
     }
   }
 }
+
 // === /SIDE === //

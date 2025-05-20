@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table__filter {
+  display: flex;
+  padding-left: 28px;
+}
+.table__filter .span {
+  font-family: "Inter", sans-serif;
+}
+.table .date {
+  width: 20%;
+}
+.table .date_td {
+  font-weight: 700;
+  font-size: 16px;
+}
+.table .date_td span {
+  font-weight: 300;
+  color: #6e6893;
+}
+.table .description {
+  width: 30%;
+}
+.table .details {
+  width: 30%;
+}
+.table th {
+  background-color: #d9d5ec;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid #d9d5ec;
+}/*# sourceMappingURL=TransactionsTable.module.css.map */

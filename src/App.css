@@ -1,0 +1,338 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+html {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.App {
+  background-color: #fff;
+  margin: 0 auto;
+  padding-top: 56px;
+  height: 100%;
+  padding-left: 25%;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.text {
+  font-size: 50px;
+}
+
+.h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.btn {
+  background-color: #9dd458;
+  border-radius: 18px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  box-shadow: 0px 0px 3px 0px #6d5bd0;
+  border-radius: 6px;
+  background-color: #fff;
+  border: 1px solid #4e36fc; /* Цвет границы */
+  transition: all 0.1s ease;
+}
+button:hover {
+  transition: all 150ms linear;
+  opacity: 0.85;
+}
+button:active {
+  transition: all 150ms linear;
+  opacity: 0.75;
+}
+button:focus {
+  outline: none;
+  outline-offset: -4px;
+}
+
+.button__filter {
+  display: flex;
+  padding: 10px;
+  margin-right: 68px;
+}
+.button__filter img {
+  margin-right: 8px;
+}
+.button__filter:hover {
+  background-color: #e1e2e2;
+  opacity: 1;
+}
+.button__filter:active {
+  background-color: #d5d6d6;
+  opacity: 1;
+}
+.button__add_transaction {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 4px 12px;
+}
+.button__add_transaction:hover {
+  color: #202129;
+  background-color: #d5d6d6;
+  opacity: 1;
+}
+.button__add_transaction:active {
+  background-color: #d5d6d6;
+  opacity: 1;
+}
+
+.container {
+  background-color: #fff;
+  max-width: 960px;
+}
+
+.section-outter {
+  padding: 0 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table__filter {
+  display: flex;
+  padding-left: 28px;
+}
+.table__filter .span {
+  font-family: "Inter", sans-serif;
+}
+.table .date {
+  width: 20%;
+}
+.table .date_td {
+  font-weight: 700;
+  font-size: 16px;
+}
+.table .date_td span {
+  font-weight: 300;
+  color: #6e6893;
+}
+.table .description {
+  width: 30%;
+}
+.table .details {
+  width: 30%;
+}
+.table th {
+  background-color: #d9d5ec;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid #d9d5ec;
+}
+
+.table_top__wrapper {
+  display: flex;
+  width: 99%;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Контейнер для инпута с иконкой */
+.search_container {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ширина на всю оставшуюся часть контейнера */
+  background-color: #f4f2ff; /* Светло-фиолетовый фон */
+  border: 1px solid #4e36fc; /* Цвет границы */
+  padding: 10px; /* Внутренний отступ */
+  border-radius: 6px; /* Закругленные углы */
+  width: 392px; /* Ширина инпута */
+  transition: box-shadow 0.3s ease; /* Добавляем анимацию теней */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Исходная тень */
+}
+.search_container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Увеличенная тень при фокусе */
+  color: #000000;
+}
+
+/* Стили для иконки */
+.search_icon {
+  font-size: 18px; /* Размер иконки */
+  color: #9a9ab3; /* Цвет иконки */
+  margin-right: 8px; /* Отступ между иконкой и инпутом */
+}
+
+/* Стили для поля ввода */
+.search_input {
+  border: none; /* Убираем стандартную границу */
+  outline: none; /* Убираем обводку при фокусе */
+  background-color: transparent; /* Прозрачный фон */
+  font-size: 16px; /* Размер текста */
+  color: #7a7ab0; /* Цвет текста */
+}
+
+.search_input::-moz-placeholder {
+  color: #b5b5d6; /* Цвет плейсхолдера */
+}
+
+.search_input::placeholder {
+  color: #b5b5d6; /* Цвет плейсхолдера */
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: all 500ms ease-in-out;
+  background-color: transparent;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  background-color: transparent;
+}
+
+.rdp-months {
+  position: initial !important;
+  width: 100% !important;
+}
+
+.stats-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.date-picker-container {
+  margin: 12px 0;
+}
+
+.date-picker {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #4e36fc;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.selected-dates {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.date-highlight {
+  font-weight: 700;
+  color: #4e36fc;
+}
+
+.stats-container {
+  font-family: "Inter", sans-serif;
+}
+
+.stats-info {
+  font-family: "Inter", sans-serif;
+  display: flex;
+}
+
+.income,
+.outcome {
+  padding: 20px;
+  border: 1px solid #e1e2e2;
+  box-shadow: 0px 0px 1.23px #0c1a4b;
+  border-radius: 16px;
+}
+.income-text,
+.outcome-text {
+  font-size: 16px;
+}
+.income-img,
+.outcome-img {
+  margin-bottom: 24px;
+}
+.income-text,
+.outcome-text {
+  margin-bottom: 8px;
+}
+.income-count,
+.outcome-count {
+  font-weight: 700;
+  font-size: 40px;
+}
+.income__container,
+.outcome__container {
+  display: flex;
+}/*# sourceMappingURL=App.css.map */

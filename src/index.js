@@ -5,27 +5,73 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Transactions from "./pages/Transactions";
+import Home from "./pages/Home";
+import { AuthContextProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
+import Authorize from "./pages/Authorize";
+import Stats from "./pages/Stats";
+import TransactionDetail from "./components/TransactionDetail";
 
+import Excel from "./pages/Excel";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
       {
+        path: "/",
+        element: (
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        ),
+      },
+      {
         path: "/transactions",
-        element: <Transactions />,
+        element: (
+          <ProtectedRoute>
+            <Transactions />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/transactions/date/:date",
+        element: (
+          <ProtectedRoute>
+            <Transactions />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/transactions/:id",
+        element: (
+          <ProtectedRoute>
+            <TransactionDetail />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: <Authorize />,
+      },
+      {
+        path: "/stats",
+        element: <Stats />,
+      },
+      {
+        path: "/import",
+        element: <Excel />,
       },
     ],
   },
 ]);
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthContextProvider>
+      <RouterProvider router={router} />
+    </AuthContextProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

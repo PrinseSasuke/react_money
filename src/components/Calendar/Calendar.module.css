@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+.dayPicker {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+}
+
+.day_buttton {
+  margin: 12px;
+  font-size: 16px;
+  padding: 12px;
+}
+.day_buttton:hover {
+  background-color: #e1e2e2;
+}
+
+.day__result {
+  display: flex;
+  align-items: center;
+}
+
+.result {
+  font-size: 14px;
+}
+
+.calendar {
+  width: 100%;
+}/*# sourceMappingURL=Calendar.module.css.map */

@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+.h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #4e36fc;
+}
+
+.slide {
+  width: 25%;
+  padding-left: 32px;
+  height: 100%;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 76px;
+}
+.topWrapper img {
+  margin-right: 4px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu__item {
+  display: flex;
+  margin-bottom: 32px;
+}
+.menu__item svg {
+  margin-right: 20px;
+}
+.menu__item span {
+  font-size: 18px;
+}/*# sourceMappingURL=Side.module.css.map */

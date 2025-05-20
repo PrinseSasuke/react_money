@@ -1,73 +1,130 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Side.module.scss";
-
+import { Link } from "react-router-dom";
+import LoginButton from "../Auth/LoginButton.js";
+import LogoutButton from "../Auth/LogoutButton.js";
+import Profile from "../Auth/Profile.js";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useState } from "react";
 function Side() {
+  const { isAuthenticated } = useAuth0();
+  const [activeItem, setActiveItem] = useState("home");
+  const getFillColor = (item) => (activeItem === item ? "#4E36FC" : "#1B1D4E");
   return (
     <div className={styles.slide}>
-      <div className={styles.topWrapper}>
-        <img src="./img/logo.svg" alt="img" />
-        <h1 className={styles.h1}>React-Money</h1>
-      </div>
+      <Link to="/">
+        <div className={styles.topWrapper}>
+          <img src="/img/logo.svg" alt="img" />
+          <h1 className={styles.h1}>React-Money</h1>
+        </div>
+      </Link>
       <ul className={styles.menu}>
-        <li className={styles.menu__item}>
-          <svg
-            width="19"
-            height="17"
-            viewBox="0 0 19 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17.9211 7.5528L9.89645 0.240769C9.54422 -0.0802273 9.01307 -0.0801923 8.66099 0.240734L0.63629 7.55284C0.354139 7.80994 0.260939 8.20608 0.398783 8.56201C0.536662 8.91794 0.872365 9.1479 1.25407 9.1479H2.53575V16.474C2.53575 16.7645 2.77127 17 3.06174 17H7.46025C7.75071 17 7.98623 16.7645 7.98623 16.474V12.0258H10.5713V16.4741C10.5713 16.7645 10.8068 17 11.0973 17H15.4956C15.7861 17 16.0216 16.7646 16.0216 16.4741V9.1479H17.3035C17.6852 9.1479 18.0209 8.9179 18.1588 8.56201C18.2965 8.20605 18.2033 7.80994 17.9211 7.5528Z"
-              fill="#1B1D4E"
-            />
-          </svg>
-          <span>Главная</span>
+        <li className={styles.menu__item} onClick={() => setActiveItem("home")}>
+          <Link to="/" style={{ display: "flex" }}>
+            <svg
+              width="19"
+              height="17"
+              viewBox="0 0 19 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.9211 7.5528L9.89645 0.240769C9.54422 -0.0802273 9.01307 -0.0801923 8.66099 0.240734L0.63629 7.55284C0.354139 7.80994 0.260939 8.20608 0.398783 8.56201C0.536662 8.91794 0.872365 9.1479 1.25407 9.1479H2.53575V16.474C2.53575 16.7645 2.77127 17 3.06174 17H7.46025C7.75071 17 7.98623 16.7645 7.98623 16.474V12.0258H10.5713V16.4741C10.5713 16.7645 10.8068 17 11.0973 17H15.4956C15.7861 17 16.0216 16.7646 16.0216 16.4741V9.1479H17.3035C17.6852 9.1479 18.0209 8.9179 18.1588 8.56201C18.2965 8.20605 18.2033 7.80994 17.9211 7.5528Z"
+                fill={getFillColor("home")}
+              />
+            </svg>
+            <span>Главная</span>
+          </Link>
         </li>
-        <li className={styles.menu__item}>
-          <svg
-            width="21"
-            height="18"
-            viewBox="0 0 21 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15.0233 6.1518H20.5582V3.58203C20.5582 1.94705 19.228 0.616913 17.5931 0.616913H2.96511C1.33014 0.616913 0 1.94705 0 3.58203V14.6518C0 16.2868 1.33014 17.6169 2.96511 17.6169H17.5931C19.228 17.6169 20.5582 16.2868 20.5582 14.6518V12.082H15.0233C13.3883 12.082 12.0582 10.7519 12.0582 9.11691C12.0582 7.48194 13.3883 6.1518 15.0233 6.1518Z"
-              fill="#4E36FC"
-            />
-            <path
-              d="M15.0232 7.33786C14.0423 7.33786 13.2441 8.13593 13.2441 9.11694C13.2441 10.098 14.0422 10.896 15.0232 10.896H20.5581V7.3379H15.0232V7.33786ZM15.8139 9.70996H15.0232C14.6957 9.70996 14.4302 9.44443 14.4302 9.11694C14.4302 8.78946 14.6957 8.52393 15.0232 8.52393H15.8139C16.1414 8.52393 16.4069 8.78946 16.4069 9.11694C16.4069 9.44443 16.1414 9.70996 15.8139 9.70996Z"
-              fill="#4E36FC"
-            />
-          </svg>
-          <span>История операций</span>
+        <li
+          className={styles.menu__item}
+          onClick={() => setActiveItem("history")}
+        >
+          <Link to="/transactions" style={{ display: "flex" }}>
+            <svg
+              width="21"
+              height="18"
+              viewBox="0 0 21 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.0233 6.1518H20.5582V3.58203C20.5582 1.94705 19.228 0.616913 17.5931 0.616913H2.96511C1.33014 0.616913 0 1.94705 0 3.58203V14.6518C0 16.2868 1.33014 17.6169 2.96511 17.6169H17.5931C19.228 17.6169 20.5582 16.2868 20.5582 14.6518V12.082H15.0233C13.3883 12.082 12.0582 10.7519 12.0582 9.11691C12.0582 7.48194 13.3883 6.1518 15.0233 6.1518Z"
+                fill={getFillColor("history")}
+              />
+              <path
+                d="M15.0232 7.33786C14.0423 7.33786 13.2441 8.13593 13.2441 9.11694C13.2441 10.098 14.0422 10.896 15.0232 10.896H20.5581V7.3379H15.0232V7.33786ZM15.8139 9.70996H15.0232C14.6957 9.70996 14.4302 9.44443 14.4302 9.11694C14.4302 8.78946 14.6957 8.52393 15.0232 8.52393H15.8139C16.1414 8.52393 16.4069 8.78946 16.4069 9.11694C16.4069 9.44443 16.1414 9.70996 15.8139 9.70996Z"
+                fill={getFillColor("history")}
+              />
+            </svg>
+            <span> Мои операции</span>
+          </Link>
         </li>
-        <li className={styles.menu__item}>
-          <svg
-            width="21"
-            height="18"
-            viewBox="0 0 21 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M15.2603 4.96271V7.99527L20.2761 3.97948L15.2603 -0.00106812V2.96271H13.1804H12.7662L12.4733 3.2556L3.2623 12.4666H0.28125V14.4666H3.67651H4.09073L4.38362 14.1737L13.5946 4.96271H15.2603Z"
-              fill="#1B1D4E"
-            />
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M15.2603 12.1986V9.16608L20.2761 13.1819L15.2603 17.1624V14.1986H13.1804H12.7662L12.4733 13.9057L3.2623 4.69472H0.28125V2.69472H3.67651H4.09073L4.38362 2.98761L13.5946 12.1986H15.2603Z"
-              fill="#1B1D4E"
-            />
-          </svg>
+        <li
+          className={styles.menu__item}
+          onClick={() => setActiveItem("statistic")}
+        >
+          <Link to="/stats" style={{ display: "flex" }}>
+            <svg
+              width="21"
+              height="18"
+              viewBox="0 0 21 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M15.2603 4.96271V7.99527L20.2761 3.97948L15.2603 -0.00106812V2.96271H13.1804H12.7662L12.4733 3.2556L3.2623 12.4666H0.28125V14.4666H3.67651H4.09073L4.38362 14.1737L13.5946 4.96271H15.2603Z"
+                fill={getFillColor("statistic")}
+              />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M15.2603 12.1986V9.16608L20.2761 13.1819L15.2603 17.1624V14.1986H13.1804H12.7662L12.4733 13.9057L3.2623 4.69472H0.28125V2.69472H3.67651H4.09073L4.38362 2.98761L13.5946 12.1986H15.2603Z"
+                fill={getFillColor("statistic")}
+              />
+            </svg>
 
-          <span>Статистика</span>
+            <span>Статистика</span>
+          </Link>
         </li>
+        {/* <li
+          className={styles.menu__item}
+          onClick={() => setActiveItem("statistic")}
+        >
+          <Link to="/export" style={{ display: "flex" }}>
+            <svg
+              width="21"
+              height="18"
+              viewBox="0 0 21 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M15.2603 4.96271V7.99527L20.2761 3.97948L15.2603 -0.00106812V2.96271H13.1804H12.7662L12.4733 3.2556L3.2623 12.4666H0.28125V14.4666H3.67651H4.09073L4.38362 14.1737L13.5946 4.96271H15.2603Z"
+                fill={getFillColor("statistic")}
+              />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M15.2603 12.1986V9.16608L20.2761 13.1819L15.2603 17.1624V14.1986H13.1804H12.7662L12.4733 13.9057L3.2623 4.69472H0.28125V2.69472H3.67651H4.09073L4.38362 2.98761L13.5946 12.1986H15.2603Z"
+                fill={getFillColor("statistic")}
+              />
+            </svg>
+
+            <span>Экспорт</span>
+          </Link>
+        </li> */}
       </ul>
+
+      <LoginButton />
+      <div className={styles.profie__wrapper}>
+        <Profile />
+        <LogoutButton />
+      </div>
     </div>
   );
 }

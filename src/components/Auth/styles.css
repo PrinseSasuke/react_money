@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+.profile {
+  display: flex;
+  background-color: #f3f5fa;
+  padding: 12px 0 12px 12px;
+  width: 200px;
+  margin-bottom: 12px;
+}
+.profile img {
+  width: 46px;
+  height: 46px;
+  margin-right: 20px;
+}
+.profile span {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.button_login,
+.button_logout {
+  display: flex;
+  width: 120px;
+  padding: 12px 4px 12px 4px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+.button_login span,
+.button_logout span {
+  margin-right: 4px;
+}/*# sourceMappingURL=styles.css.map */

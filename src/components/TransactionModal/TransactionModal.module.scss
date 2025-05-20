@@ -25,6 +25,10 @@ $transition: 0.2s;
 
 $color--white: #fff;
 $color--dark: #000000;
+$color--green-fon: #cdffcd;
+$color-green-text: #007f00;
+$color--red-fon: #ffe0e0;
+$color--red-text: #d30000;
 
 $screen-sm: 576px;
 $screen-md: 768px;
@@ -42,24 +46,52 @@ $screen-xl: 960px;
   @include inter();
   font-size: $fs-3;
   font-weight: $fw-semi;
-  margin-bottom: $base * 2;
+  margin-right: $base * 3;
+  &__description {
+    margin-bottom: $base * 3;
+  }
 }
 .input,
 .select,
 .textarea,
 .custom_date_input {
   @include inter();
-  width: 70%;
   padding: 8px 12px;
   font-size: $fs-2;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-bottom: $base * 2;
+  width: 200px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease; /* Добавляем анимацию трансформации */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: scale(1.05); /* Увеличение */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: $color--dark;
+  }
+
+  &:active {
+    transform: scale(1.05); /* Увеличение */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Убираем тень */
+  }
+}
+.select {
+  &:active {
+    transform: none; /* Лёгкое уменьшение */
+  }
+  &:hover,
+  &:focus {
+    transform: scale(1.05); /* Увеличение */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-color: $color--white;
+  }
 }
 
 .textarea {
   resize: none;
   height: 80px;
+  width: 100%;
+  margin-bottom: $base * 3;
 }
 .topWrapper {
   display: flex;
@@ -87,4 +119,30 @@ $screen-xl: 960px;
   width: fit-content;
   display: block;
   margin: 0 auto;
+}
+fieldset {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+}
+.fieldset {
+  @include inter();
+  font-size: $fs-3;
+}
+
+.flexContainer {
+  display: flex;
+  margin-bottom: $base * 3;
+  align-items: center;
+}
+.radioInput {
+}
+.radioLabel {
+  &Income {
+    color: $color-green-text;
+    margin-right: $base * 3;
+  }
+  &Expense {
+    color: $color--red-text;
+  }
 }

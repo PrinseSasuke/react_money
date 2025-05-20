@@ -32,106 +32,6 @@ $screen-lg: 992px;
 $screen-xl: 960px;
 
 //== /VARIABLES ===
-
-//== COMMON ===
-html {
-  font-size: 16px;
-  @include inter();
-}
-body {
-  @include inter();
-}
-.App {
-  background-color: $color--white;
-  margin: 0 auto;
-  padding-top: $base * 14;
-  height: 100%;
-  display: flex;
-}
-a {
-  text-decoration: none;
-  color: $color--dark;
-}
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-img {
-  max-width: 100%;
-}
-.text {
-  font-size: 50px;
-}
-.h2 {
-  @include inter();
-  font-size: $fs-4;
-  font-weight: $fw-bold;
-}
-.btn {
-  background-color: #9dd458;
-  border-radius: 18px;
-}
-button {
-  cursor: pointer;
-}
-/* CSS Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  height: 100%;
-  font-family: sans-serif;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-button {
-  box-shadow: 0px 0px 3px 0px #6d5bd0;
-  border-radius: 6px;
-  background-color: $color--white;
-  border: 1px solid #4e36fc; /* Цвет границы */
-}
-//===CONTAINER===
-.container {
-  background-color: $color--white;
-  max-width: $screen-xl;
-  //margin: 0 auto;
-}
-.section-outter {
-  padding: 0 20px;
-}
-//===/CONTAINER===
-//== /COMMON ===
 .date_td {
   font-weight: $fw-bold;
   font-size: $fs-2;
@@ -195,4 +95,51 @@ button {
   font-size: $fs-xs;
   font-weight: $fw-medium;
   color: #6e6893;
+}
+.dots {
+  cursor: pointer;
+  position: relative;
+}
+.dropdownMenu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  width: 150px;
+  z-index: 1000;
+  font-size: $fs-1;
+  padding: $base * 3;
+}
+
+.dropdownMenu li {
+  padding: $base * 2 $base * 3;
+  cursor: pointer;
+}
+
+.dropdownMenu li:hover {
+  background-color: #f2f0f9;
+}
+
+.deleteItem {
+  color: #d30000;
+}
+.dropdownMenuClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: $color--white;
+  border: none;
+  cursor: pointer;
+  width: $base * 4;
+  height: $base * 4;
+}
+
+.dropdownMenuClose:hover {
+  color: #444;
 }
