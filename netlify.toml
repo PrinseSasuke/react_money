@@ -1,0 +1,11 @@
+[build]
+  # Папка, где лежит собранный React-проект
+  publish = "build"
+  # Команда сборки React
+  command = "npm run build"
+
+# Правило редиректа, чтобы Netlify всегда отдавал index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
