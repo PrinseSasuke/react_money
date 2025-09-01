@@ -12,5 +12,4 @@ function ProtectedRoute({ children }) {
   }
   return user ? children : <Navigate to="/login" />;
 }
-
 export default ProtectedRoute;

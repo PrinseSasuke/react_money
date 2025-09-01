@@ -1,6 +1,6 @@
-import React from "react";
 import Transaction from "../Transaction";
 import styles from "./TransactionsTable.module.scss";
+
 export default function TransactionsTable({ transactions }) {
   return (
     <table className={styles.table}>

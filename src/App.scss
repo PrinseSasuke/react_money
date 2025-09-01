@@ -55,6 +55,7 @@ body {
   padding-top: $base * 14;
   height: 100%;
   padding-left: 25%;
+  @include inter();
 }
 a {
   text-decoration: none;
@@ -442,3 +443,116 @@ button {
   border-color: #3f51b5;
 }
 // == /FILTER == //
+.excel-container {
+  padding: 20px;
+  background: #fafafa;
+  @include inter();
+}
+
+.excel-title {
+  font-size: $fs-6;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.file-upload-input {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 2px dashed #4e36fc;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  font-size: 1rem;
+  color: #4e36fc;
+  margin-bottom: 20px;
+}
+
+.file-upload-input:hover {
+  background-color: #f0f0ff;
+  border-color: #3a27b1;
+}
+
+.file-upload-input:focus {
+  outline: none;
+  box-shadow: 0 0 8px #4e36fc;
+}
+
+.imported-data {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: left;
+  font-family: monospace;
+  font-size: $fs-3;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+.container-limit {
+  padding: 30px;
+  background-color: #f9f9fb;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+h2 {
+  color: #1B1D4E;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.limitInput {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  label {
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  input {
+    width: 150px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+}
+
+.stats {
+  text-align: center;
+
+  p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  strong {
+    color: #4E36FC;
+  }
+
+  .warning {
+    color: red;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+}
+.limit-c{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

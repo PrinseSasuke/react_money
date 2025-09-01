@@ -7,7 +7,6 @@ import { auth } from "../../firebase";
 import { Timestamp } from "firebase/firestore";
 import { setDoc } from "firebase/firestore";
 import { doc } from "firebase/firestore";
-import { getDocs, deleteDoc } from "firebase/firestore";
 const parseDate = (value) => {
   if (!value) return new Date(); // fallback
   if (value instanceof Date) return value;
@@ -25,20 +24,25 @@ const parseDate = (value) => {
   return new Date(value);
 };
 
-function ExcelReader({ file }) {
+function ExcelReader({ file, onDataLoad }) {
   const [data, setData] = useState([]);
   const [user] = useAuthState(auth);
 
   const addTransaction = async (id, newTr) => {
+    const stringId = String(id);
     try {
-      const ref = doc(db, "transactions", id);
+      const ref = doc(db, "transactions", stringId);
       await setDoc(ref, newTr);
       console.log("✅ Добавлена транзакция с ID:", id);
     } catch (error) {
       console.error("Ошибка при добавлении:", error);
     }
   };
-
+  useEffect(() => {
+    if (data.length > 0 && onDataLoad) {
+      onDataLoad(data);
+    }
+  }, [data, onDataLoad]);
   const readExcelFile = (file) => {
     const reader = new FileReader();
     reader.onload = async (e) => {
@@ -88,12 +92,7 @@ function ExcelReader({ file }) {
     }
   }, [file, user]);
 
-  return (
-    <div>
-      <h3>Импортированные данные:</h3>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default ExcelReader;

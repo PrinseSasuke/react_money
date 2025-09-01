@@ -11,8 +11,9 @@ import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import Authorize from "./pages/Authorize";
 import Stats from "./pages/Stats";
 import TransactionDetail from "./components/TransactionDetail";
-
+import LimitsPage from "./pages/LimitsPage";
 import Excel from "./pages/Excel";
+import ForecastPage from "./pages/Forecast";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const router = createBrowserRouter([
@@ -64,6 +65,14 @@ const router = createBrowserRouter([
         path: "/import",
         element: <Excel />,
       },
+      {
+        path: "/forecast",
+        element: <ForecastPage />
+      },
+      {
+        path: "/limit",
+        element: <LimitsPage />
+      }
     ],
   },
 ]);
